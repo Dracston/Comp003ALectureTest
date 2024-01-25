@@ -6,6 +6,8 @@
  */
 
 
+using System.Diagnostics.Metrics;
+
 namespace Comp003ALectureTest
 {
     internal class Program
@@ -82,10 +84,116 @@ namespace Comp003ALectureTest
 
             int anInteger = 2147483647;
 
+            /* declaring, using, and concatenating characters ans strings */
+            char aLetter = 'A'; // character values are enclosed in single quotes
+            string message = "Hello World!"; //string values are enclosed in double quotes
+
+            Console.WriteLine("Concatenation using + : " + aLetter + " " + message); // use the plus (+) sign in between character/ strings to concatenate
+            Console.WriteLine($"Concantenation using string interpolation : {aLetter} {message} "); // use string interpolation with a dollar-sign ($) before the opening double-quote and enclosing variables with curly braces {(variableName)}
+
+            /*floating-point types */
+            double number1 = 3.5623;
+            float number2 = 3.5623f;
+            decimal number3 = 3.5623m;
+            Console.WriteLine($"Value of number1: {number1}");
+            Console.WriteLine($"Value of number2: {number2}");
+            Console.WriteLine($"Value of number3: {number3}");
+
+            /*scientific notation */
+            double avogadrosNumber = 6.022e23;
+            Console.WriteLine($"Value of avogadrosNumber: {avogadrosNumber}");
+
+            /*bool type*/
+            bool itWorked = true;
+            Console.WriteLine($"value of itWorked: {itWorked}");
+            itWorked = false;
+            Console.WriteLine($"Value of itWorked: {itWorked}");
+
+            /* convert */
+            string inputAgeString;
+            int inputAge;
+            int currentyear = 2023;
+            Console.WriteLine($"Enter age in {currentyear}: ");
+            inputAgeString= Console.ReadLine();
+            inputAge= Convert.ToInt32(inputAgeString);
+            Console.WriteLine($"Your age is {inputAge}");
+
+            Console.WriteLine("*************************************************************");
+            /*
+             * math operations
+             * addition: +
+             * subtraction: -
+             * multiplication: *
+             * diviision: /
+             * modulo: % (remainder)
+             */
+            int addition = 2 + 3;
+            int subtraction = 5 - 2;
+            int multiplication = 22 * 2;
+            int division = 21 / 7;
+            int modulo = 77 % 5;
+            Console.WriteLine($"value of addition: {addition}");
+            Console.WriteLine($"Value of subtraction: {subtraction}");
+            Console.WriteLine($"Value of multiplication: {multiplication}");
+            Console.WriteLine($"Value of division: {division}");
+            Console.WriteLine($"Value of modulo: {modulo}");
+
+            /*
+             * arithmetic, compund expressions and order of operations
+             *Multiplication and division are done first, left to right
+             *Addition and subtraction are done last, left to right
+             *Reference:https://csharpplayersguide.com/articles/operators-table
+             */
+
+            int arithmetic1; // declaring the variable arithmetic1.
+            arithmetic1 = 9 - 2;// assinging a value to arithmetic1, using some math.
+            Console.WriteLine($"Value of arithmetic1: {arithmetic1}");
+            arithmetic1 = 3 + 3; //another assingment.
+            Console.WriteLine($"New value of arithmetic1: {arithmetic1}");
+            int arithmetic2 = 3 + 1; // declaring arithmetic2 and assinging a value to arithmetic2 all at once.
+            Console.WriteLine($"Value of writhmetic2: {arithmetic2}");
+            arithmetic2 = 1 + 2; // assinging a second value to arithmetic2.
+            Console.WriteLine($"New value of arithmetic2: {arithmetic2}");
+
+            // use mnultiple sets of parentheses to group operation
+            int result = ((2 + 1) * 8 - (3 * 20 * 2) / 4);
+            Console.WriteLine($"Value of result: {result}");
+
+            /* compound assingment operator */
+            int compoundAssingmentOperator = 0;
+            compoundAssingmentOperator += 5;// the equivalent of compoundAssingmentOperator = compundAssingmentOperator +5; (a is 5 after this line runs.)
+            compoundAssingmentOperator -= 2;// The equivalent of compoundAssignmentOperator = compoundAssignmentOperator – 2; (a is 3 after this line runs.)
+            compoundAssingmentOperator *= 4;//The equivalent of compoundAssignmentOperator = compoundAssignmentOperator *4; (a is 12 after this line runs.)
+            compoundAssingmentOperator /= 2; //The equivalent of compoundAssignmentOperator = compoundAssignmentOperator / 2; (a is 6 after this line runs.)
+            compoundAssingmentOperator%= 2;// The equivalent of compoundAssignmentOperator = compoundAssignmentOperator %2; (a is 0 after this line runs.)
+
+            /* increment and decrement operators */
+            int incrementDecrementOperators = 0;
+            incrementDecrementOperators++;// The equivalent of incrementDecrementOperators +=1;or incrementDecrementOperators = incrementDecrementOperators + 1;
+            incrementDecrementOperators--; // The equivalent of incrementDecrementOperators -= 1; or incrementDecrementOperators = incrementDecrementOperators -1;
+
+            Console.WriteLine("******************************************************************************");
+            /* Console2.0 */
+            Console.WriteLine("What is your name, human? "); //Notice the space at the end.
+            string userName=Console.ReadLine(); // reads the entire line. 
+            //result: What is your name, human? Logan
+
+            Console.WriteLine("Press any key when you're ready to begin.");
+            Console.ReadKey(); //reads a keystroke
+
+            Console.BackgroundColor = ConsoleColor.Yellow; // Changes the console background to yeallow.
+            Console.ForegroundColor = ConsoleColor.Black; // changes the text to black. 
+            Console.Title = "Hello World!"; // changes the conole title
+
+            Console.Beep(440, 1000); // Computer beeps.
+            //
 
 
 
-         
+
+
+
+
         }
     }
 }
